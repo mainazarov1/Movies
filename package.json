@@ -1,0 +1,22 @@
+{
+  "name": "movies",
+  "version": "1.0.0",
+  "description": "### [Use IMDb-API](https://imdb-api.com/api)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mainazarov1/Movies.git"
+  },
+  "author": "Mainazarov1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mainazarov1/Movies/issues"
+  },
+  "homepage": "https://github.com/mainazarov1/Movies#readme",
+  "dependencies": {
+    "sass": "^1.49.9"
+  }
+}
