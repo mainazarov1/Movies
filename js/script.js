@@ -1,4 +1,4 @@
-// const auth = 'k_hplwhdpx';
+const auth = 'k_hplwhdpx';
 // const auth = 'k_7czxtzqi';
 const logo = document.getElementById('header__logo');
 const nav = document.querySelector('.header__list');
@@ -110,7 +110,11 @@ async function showLocalStorage() {
 navBtn.forEach(el => {
 	el.addEventListener('click', e => {
 		e.preventDefault();
-		list.style = "grid-template-columns: repeat(5, 1fr)";
+		if (window.screen.width < 425) {
+			list.style = "grid-template-columns: 1fr";
+		} else {
+			list.style = "grid-template-columns: repeat(5, 1fr)";
+		}
 		if (el.getAttribute('id') == 'favorites') {
 			if (favorites) {
 				showLocalStorage()
@@ -161,3 +165,7 @@ function addToFavorites(id) {
 }
 getData();
 // localStorage.clear()
+console.log(window.screen.width);
+if (window.screen.width < 425) {
+	list.style = "grid-template-columns: 1fr";
+}
