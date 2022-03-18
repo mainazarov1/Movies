@@ -182,9 +182,9 @@ main {
 		@media (max-width: 499.9px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
-		@media (max-width: 424.9px) {
-			grid-template-columns: repeat(1, 1fr);
-		}
+		// @media (max-width: 424.9px) {
+		// 	grid-template-columns: repeat(1, 1fr);
+		// }
 	}
 	&__item {
 		// cursor: none;

@@ -1,5 +1,6 @@
-const auth = 'k_hplwhdpx';
-// const auth = 'k_7czxtzqi';
+// const auth = 'k_hplwhdpx'; // mainazarov
+// const auth = 'k_7czxtzqi'; // islambek
+const auth = k_7ufla6tk // salim
 const logo = document.getElementById('header__logo');
 const nav = document.querySelector('.header__list');
 const navBtn = document.querySelectorAll('.header__item');
@@ -111,7 +112,7 @@ navBtn.forEach(el => {
 	el.addEventListener('click', e => {
 		e.preventDefault();
 		if (window.screen.width < 425) {
-			list.style = "grid-template-columns: 1fr";
+			list.style = "grid-template-columns: 2fr";
 		} else {
 			list.style = "grid-template-columns: repeat(5, 1fr)";
 		}
@@ -165,7 +166,7 @@ function addToFavorites(id) {
 }
 getData();
 // localStorage.clear()
-console.log(window.screen.width);
+// console.log(window.screen.width);
 if (window.screen.width < 425) {
 	list.style = "grid-template-columns: 1fr";
 }
