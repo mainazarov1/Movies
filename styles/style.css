@@ -63,6 +63,11 @@ a {
     backdrop-filter: blur(10px);
   }
 }
+@media (max-width: 499.9px) {
+  .header__list {
+    width: 70%;
+  }
+}
 .header__list.active {
   right: 0;
 }
@@ -82,7 +87,8 @@ a {
     z-index: 100;
     text-align: left;
     margin: 1rem 2rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 900;
   }
 }
 .header__input {
@@ -90,6 +96,11 @@ a {
   border-radius: 0.5rem;
   padding: 0.3rem 0.5rem;
   outline: none;
+}
+@media (max-width: 499.9px) {
+  .header__input {
+    width: 130px;
+  }
 }
 
 .logo {
@@ -103,12 +114,17 @@ a {
     margin-right: auto;
   }
 }
+@media (max-width: 499.9px) {
+  .logo {
+    font-size: 24px;
+  }
+}
 
 .burger {
   display: none;
   position: relative;
-  min-width: 44px;
-  height: 44px;
+  min-width: 24px;
+  height: 24px;
   background-color: transparent;
   outline: none;
   border: none;
@@ -123,10 +139,10 @@ a {
 .burger span {
   position: absolute;
   width: 100%;
-  height: 6px;
+  height: 2px;
   background-color: white;
   left: 0;
-  transform: translateY(-3px);
+  transform: translateY(-1px);
   border-radius: 6px;
 }
 .burger span::before, .burger span::after {
@@ -139,10 +155,10 @@ a {
   left: 0;
 }
 .burger span::before {
-  transform: translateY(-15px);
+  transform: translateY(-9px);
 }
 .burger span::after {
-  transform: translateY(15px);
+  transform: translateY(9px);
 }
 .burger.active span {
   background-color: transparent;
