@@ -1,6 +1,6 @@
 // const auth = 'k_hplwhdpx'; // mainazarov
 // const auth = 'k_7czxtzqi'; // islambek
-const auth = k_7ufla6tk // salim
+const auth = 'k_7ufla6tk' // salim
 const logo = document.getElementById('header__logo');
 const nav = document.querySelector('.header__list');
 const navBtn = document.querySelectorAll('.header__item');
