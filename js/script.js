@@ -55,11 +55,11 @@ async function getData(value) {
 	let res;
 	let data;
 	if (value === 'main' || value === undefined) {
-		res = await fetch(`https://imdb-api.com/API/AdvancedSearch/${auth}?groups=top_100`);
+		res = await fetch(`http://imdb-api.com/API/AdvancedSearch/${auth}?groups=top_100`);
 		data = await res.json();
 		data = data.results;
 	} else {
-		res = await fetch(`https://imdb-api.com/en/API/${value}/${auth}`);
+		res = await fetch(`http://imdb-api.com/en/API/${value}/${auth}`);
 		data = await res.json();
 		data = data.items;
 	}
