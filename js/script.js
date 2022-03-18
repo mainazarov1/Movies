@@ -1,4 +1,4 @@
-// const auth = 'k_hplwhdpx';
+const auth = 'k_hplwhdpx';
 // const auth = 'k_7czxtzqi';
 const logo = document.getElementById('header__logo');
 const nav = document.querySelector('.header__list');
