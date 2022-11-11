@@ -1,6 +1,6 @@
-// const auth = 'k_hplwhdpx'; // mainazarov
+const auth = 'k_hplwhdpx'; // mainazarov
 // const auth = 'k_7czxtzqi'; // islambek
-const auth = 'k_7ufla6tk' // salim
+// const auth = 'k_7ufla6tk' // salim
 const logo = document.getElementById('header__logo');
 const nav = document.querySelector('.header__list');
 const navBtn = document.querySelectorAll('.header__item');
@@ -32,7 +32,7 @@ function showData(data) {
 // 	let res = await fetch(`https://imdb-api.com/API/AdvancedSearch/${auth}?groups=top_100`);
 // 	let data = await res.json();
 // 	let div = ``;
-	
+
 // 	https://imdb-api.com/en/API/Title/k_7czxtzqi/tt1375666/FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia,
 // }
 // preview(data)
@@ -107,22 +107,12 @@ async function showLocalStorage() {
 		})
 	}
 }
-
 navBtn.forEach(el => {
 	el.addEventListener('click', e => {
 		e.preventDefault();
-		if (window.screen.width < 425) {
-			list.style = "grid-template-columns: 2fr";
-		} else {
-			list.style = "grid-template-columns: repeat(5, 1fr)";
-		}
 		if (el.getAttribute('id') == 'favorites') {
 			if (favorites) {
 				showLocalStorage()
-			};
-			if (favorites.length == 0) {
-				list.style = "grid-template-columns: 1fr";
-				list.innerHTML = '<div><h4><img class="empty" src="./assets/7beefb96feac302ee313cf510fca4577-removebg-preview.png" alt="Empty"></h4></div>'
 			}
 		} else {
 			const val = el.getAttribute('id');
