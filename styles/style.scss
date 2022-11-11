@@ -34,15 +34,11 @@ a {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		@media (max-width: 539.9px) {
-			// flex-direction: column;
-		}
 	}
 	&__list {
 		display: flex;
 		justify-content: end;
 		margin: 0 40px;
-		transition: 1s;
 		@media (max-width: 767.9px) {
 			display: flex;
 			flex-direction: column;
@@ -61,19 +57,9 @@ a {
 		}
 		&.active {
 			right: 0;
-			// width: 50%;
-			// height: 100vh;
-			@media (max-width: 767.9px) {
-				// display: none;
-				// right: 100px;
-			}
 		}
-		// @media (max-width: 768.9px) {
-		// 	display: block;
-		// }
 	}
 	&__item {
-		// display: flex;
 		align-items: center;
 		text-align: center;
 		cursor: pointer;
@@ -83,8 +69,6 @@ a {
 		}
 		@media (max-width: 768.9px) {
 			z-index: 100;
-			// flex-direction: column;
-			// justify-content: left;
 			text-align: left;
 			margin: 1rem 2rem;
 			font-size: 1.1rem;
@@ -111,7 +95,6 @@ a {
 	}
 	@media (max-width: 499.9px) {
 		font-size: 24px;
-
 	}
 }
 .burger {
@@ -173,18 +156,6 @@ main {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		gap: 1.5rem;
-		@media (max-width: 1024px) {
-			grid-template-columns: repeat(4, 1fr);
-		}
-		@media (max-width: 768px) {
-			grid-template-columns: repeat(3, 1fr);
-		}
-		@media (max-width: 500px) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-		// @media (max-width: 424.9px) {
-		// 	grid-template-columns: repeat(1, 1fr);
-		// }
 	}
 	
 	&__item {
@@ -240,8 +211,6 @@ main {
 			color: #fff;
 		}
 	}
-	// &__description {
-	// }
 	&__favorite {
 	}
 }
@@ -249,27 +218,3 @@ main {
 	width: 100%;
 	height: auto;
 }
-
-// .preview {
-// 	position: absolute;
-// 	display: flex;
-// 	width: calc(100% - 6rem);
-// 	// height: 90vh;
-// 	background-color: #15f;
-// 	&__content {
-// 	}
-// 	&__poster {
-// 		width: 300px;
-// 		height: fit-content;
-// 	}
-// 	&__title {
-// 	}
-// 	&__year {
-// 	}
-// 	&__plot {
-// 	}
-// 	&__directors {
-// 	}
-// 	&__stars {
-// 	}
-// }

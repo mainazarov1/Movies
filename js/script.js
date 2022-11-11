@@ -17,7 +17,6 @@ function showData(data) {
 	let li = document.createElement('li');
 	li.classList.add('item');
 	li.setAttribute('id', `${data.id}`);
-	// li.setAttribute('onclick', `${preview(data)}`);
 	let active = '';
 	if (favorites.find(favorite => favorite.id === data.id)) {
 		active = 'active';
@@ -28,14 +27,6 @@ function showData(data) {
 	<button class="item__btn ${active || ''}" onclick="addToFavorites(${data.id})"><i class="bi bi-star-fill item__favorite"></i></button>`;
 	list.appendChild(li);
 }
-// function preview(data) {
-// 	let res = await fetch(`https://imdb-api.com/API/AdvancedSearch/${auth}?groups=top_100`);
-// 	let data = await res.json();
-// 	let div = ``;
-
-// 	https://imdb-api.com/en/API/Title/k_7czxtzqi/tt1375666/FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia,
-// }
-// preview(data)
 function showDataSearch(data) {
 	let li = document.createElement('li');
 	li.classList.add('item');
@@ -64,10 +55,7 @@ async function getData(value) {
 		data = await res.json();
 		data = data.items;
 	}
-	// let res = await fetch("../DB.json")
-	// 	.then(response => {
-	// 		return response.json();
-	// 	});
+
 	await data.forEach((item) => showData(item));
 }
 
@@ -82,16 +70,6 @@ async function getDataSearch(value) {
 async function showLocalStorage() {
 	if (favorites !== null) {
 		list.innerHTML = '';
-		// const res = await fetch(`https://imdb-api.com/en/API/SearchAll/${auth}`);
-		// let data = await res.json();
-		// let res = await fetch("../DB.json")
-		// 	.then(response => {
-		// 		return response.json()
-		// 	});
-		// data = res.items;
-		// data.map(item => showData(item));
-		// favorites.forEach(item => showData(item));
-		// console.log(favorites);
 		favorites.forEach((favorite) => {
 			if (favorite) {
 				let li = document.createElement('li');
@@ -118,8 +96,6 @@ navBtn.forEach(el => {
 			const val = el.getAttribute('id');
 			getData(val);
 		}
-		burger.classList.toggle('active');
-		nav.classList.toggle('active');
 	})
 })
 
@@ -145,7 +121,6 @@ function addToFavorites(id) {
 	} else {
 		if (favorites.find(val => val.id === item.id)) {
 			favorites = favorites.filter(val => val.id !== item.id);
-			// favorites = new Set(favorites);
 			favoriteBtn.classList.remove('active');
 		} else {
 			favorites.push(item);
@@ -155,8 +130,28 @@ function addToFavorites(id) {
 	localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 getData();
-// localStorage.clear()
-// console.log(window.screen.width);
-if (window.screen.width < 425) {
-	list.style = "grid-template-columns: 1fr";
+if (window.screen.width < 460) {
+	list.style = "grid-template-columns: 1fr;";
+} else if (window.screen.width < 560) {
+	list.style = "grid-template-columns: repeat(2, 1fr);";
+} else if (window.screen.width < 768) {
+	list.style = "grid-template-columns: repeat(3, 1fr)";
+} else if (window.screen.width < 1024) {
+	list.style = "grid-template-columns: repeat(4, 1fr)";
+} else {
+	list.style = "grid-template-columns: repeat(5, 1fr)";
 }
+window.addEventListener('resize', () => {
+	if (window.screen.width < 460) {
+		list.style = "grid-template-columns: 1fr;";
+	} else if (window.screen.width < 560) {
+		list.style = "grid-template-columns: repeat(2, 1fr);";
+	} else if (window.screen.width < 768) {
+		list.style = "grid-template-columns: repeat(3, 1fr)";
+	} else if (window.screen.width < 1024) {
+		list.style = "grid-template-columns: repeat(4, 1fr)";
+	} else {
+		list.style = "grid-template-columns: repeat(5, 1fr)";
+	}
+})
+// localStorage.clear()
